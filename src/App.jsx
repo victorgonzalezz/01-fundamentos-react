@@ -1,0 +1,26 @@
+//JSX = Javascript + XML
+//(arquivo js que contém HTML)
+//Componente: função que retorna algum HTML
+//Todos os componentes do React, precisam ser JSX
+import { Header } from "./components/Header";
+import { Post } from "./components/Post";
+import { Sidebar } from "./components/Sidebar";
+
+import styles from "./App.module.css";
+
+import "./global.css";
+
+export function App() {
+  return (
+    <div>
+      <Header />
+
+      <div className={styles.wrapper}>
+        <Sidebar />
+        <main>
+          <Post />
+        </main>
+      </div>
+    </div>
+  );
+}
