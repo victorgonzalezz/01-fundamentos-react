@@ -1,3 +1,4 @@
+import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
@@ -6,7 +7,9 @@ export function Post() {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img src="https://avatars.githubusercontent.com/u/63113447?v=4" />
+          <Avatar
+            src="https://avatars.githubusercontent.com/u/63113447?v=4"
+          />
           <div className={styles.authorInfo}>
             <strong>Victor Gonzalez</strong>
             <span>Web Developer</span>
@@ -21,7 +24,7 @@ export function Post() {
       <div className={styles.content}>
         <p>Fala galera 🖐</p>
         <p>
-          Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
+          Acabei de subir mais um projeto no meu portfolio. É um projeto que fiz
           no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
         </p>
         <p>
