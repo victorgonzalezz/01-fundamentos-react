@@ -34,7 +34,12 @@ export function Post({ author, publishedAt, content }) {
   }
 
   function handleNewCommentChange() {
+    event.target.setCustomValidity('');
     setNewCommentText(event.target.value);
+  }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity('Preencha o campo IstepÔ!')
   }
 
   function deleteComment(commentToDelete) {
@@ -44,7 +49,7 @@ export function Post({ author, publishedAt, content }) {
     setComments(commentsWithoutDeletedOne);
   }//bloco de código para iniciar os estudos de filter amanha no GPT
 
-
+  const isNewCommentEmpty = newCommentText.trim().length === 0;
 
   return (
     <article className={styles.post}>
@@ -84,17 +89,21 @@ export function Post({ author, publishedAt, content }) {
 
         <textarea
           name="comment"
+          placeholder="Deixe um comentário"
           value={newCommentText}
           onChange={handleNewCommentChange}
-          placeholder="Deixe um comentário"
+          onInvalid={handleNewCommentInvalid}
+          required
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
 
       <div className={styles.commentList}>
-        {comments.map(comment => {
+        {comments.map((comment) => {
           return (
             <Comment
               key={comment}

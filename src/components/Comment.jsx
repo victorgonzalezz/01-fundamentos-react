@@ -11,7 +11,8 @@ export function Comment({ content, onDeleteComment }) {
     <div className={styles.comment}>
       <Avatar
         hasBorder={false}
-        src="https://avatars.githubusercontent.com/u/63113447?v=4" />
+        src="https://avatars.githubusercontent.com/u/63113447?v=4"
+      />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
@@ -22,8 +23,11 @@ export function Comment({ content, onDeleteComment }) {
                 Cerca de uma 1h atrás
               </time>
             </div>
-
-            <button onClick={handleDeleteComment} title="Deletar Comentário">
+            
+            <button
+              onMouseDown={handleDeleteComment}
+              title="Deletar Comentário"
+            >
               <Trash size={24} />
             </button>
           </header>
