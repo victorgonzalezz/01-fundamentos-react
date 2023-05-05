@@ -50,7 +50,6 @@ export function App(props) {
   return (
     <div>
       <Header />
-
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
